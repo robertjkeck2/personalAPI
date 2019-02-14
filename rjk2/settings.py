@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 try:
     DEBUG = os.environ['DEBUG'] == 'True'
 except:
-    DEBUG = True
+    DEBUG = False
 try:
     SECRET_KEY = os.environ['SECRET_KEY']
 except:
