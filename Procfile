@@ -1,0 +1,1 @@
+web: gunicorn rjk2.wsgi
