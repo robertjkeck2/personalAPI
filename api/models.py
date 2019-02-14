@@ -11,6 +11,9 @@ class Contact(models.Model):
     email = models.EmailField(max_length=200, blank=True)
     phone_number = models.CharField(max_length=20, blank=True)
 
+    def __str__(self):
+        return self.email
+
 class Education(models.Model):
     area = models.CharField(max_length=500, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -19,6 +22,9 @@ class Education(models.Model):
     institution = models.CharField(max_length=500, blank=True, default='')
     start_date = models.DateField()
     website = models.URLField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.institution
     
 class Experience(models.Model):
     company = models.CharField(max_length=500, blank=True, default='')
@@ -30,16 +36,25 @@ class Experience(models.Model):
     summary = models.TextField()
     website = models.URLField(max_length=500, blank=True)
 
+    def __str__(self):
+        return self.company
+
 class Interest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=500, blank=True, default='')
     link = models.URLField(max_length=500, blank=True)
+    
+    def __str__(self):
+        return self.name
 
 class Link(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=500, blank=True, default='')
     url = models.URLField(max_length=500, blank=True)
     name = models.CharField(max_length=500, blank=True, default='')
+
+    def __str__(self):
+        return self.name
 
 class Me(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -53,6 +68,9 @@ class Me(models.Model):
     summary = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     website = models.URLField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.name
     
 class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -60,6 +78,9 @@ class Project(models.Model):
     name = models.CharField(max_length=500, blank=True, default='')
     summary = models.TextField()
     url = models.URLField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     body = models.TextField()
@@ -70,13 +91,22 @@ class Post(models.Model):
     title = models.CharField(max_length=500, blank=True, default='')
     url = models.URLField(max_length=500, blank=True)
 
+    def __str__(self):
+        return self.name
+
 class Skill(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     level = models.CharField(max_length=500, blank=True, default='')
     name = models.CharField(max_length=500, blank=True, default='')
+
+    def __str__(self):
+        return self.name
 
 class Social(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     platform = models.CharField(max_length=500, blank=True, default='')
     url = models.URLField(max_length=500, blank=True)
     username = models.CharField(max_length=500, blank=True, default='')
+
+    def __str__(self):
+        return self.platform
