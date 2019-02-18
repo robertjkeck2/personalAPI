@@ -72,9 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rjk2.wsgi.application'
 
-DEFAULT_RENDERER_CLASSES = (
-    'rest_framework.renderers.BrowsableAPIRenderer',
-)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -84,7 +81,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
-    'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES,
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     )
