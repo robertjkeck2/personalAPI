@@ -71,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'rjk2.wsgi.application'
 
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',

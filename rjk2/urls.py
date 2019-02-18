@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import permissions
 from rest_framework import routers
 
 from api import views
@@ -17,6 +18,7 @@ router.register(r'projects', views.ProjectViewSet)
 router.register(r'skills', views.SkillViewSet)
 router.register(r'socials', views.SocialViewSet)
 router.register(r'users', views.UserViewSet)
+
 
 urlpatterns = [
     path('', include(router.urls)),
