@@ -30,6 +30,7 @@ class Experience(models.Model):
     company = models.CharField(max_length=500, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     end_date = models.DateField()
+    headline = models.CharField(max_length=500, blank=True, default='')
     name = models.CharField(max_length=500, blank=True, default='')
     position = models.CharField(max_length=500, blank=True, default='')
     start_date = models.DateField()

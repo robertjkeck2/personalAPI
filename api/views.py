@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAdminUser
 
@@ -31,42 +33,82 @@ from .serializers import (
 
 
 class ContactViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John has a few emails and phone numbers. Find out all the ways to get in touch with him.
+    """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
 class EducationViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John is a lifelong learner. See all of his previous educational achievements.
+    """
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
 
 class ExperienceViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John has worked at some great companies. Explore John's work experience.
+    """
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
 
 class InterestViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John has many interests outside of work. Take a look at what he does in his free time.
+    """
     queryset = Interest.objects.all()
     serializer_class = InterestSerializer
 
 class LinkViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John collects links he thinks are interesting. Check some of his favorites out.
+    """
     queryset = Link.objects.all()
     serializer_class = LinkSerializer
 
 class MeViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    There's a lot of information about John here. For a quick summary, hit this endpoint.
+    """
     queryset = Me.objects.all()
     serializer_class = MeSerializer
 
 class ProjectViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John loves to work on side projects. Thumb through his code.
+    """
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John writes about topics he finds fascinating. Read some of his posts. 
+    """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 class SkillViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John works hard to learn new skills and practice existing ones. Analyze his expertise.
+    """
     queryset = Skill.objects.all()
     serializer_class = SkillSerializer
 
 class SocialViewSet(viewsets.ModelViewSet):
+    """
+    list:
+    John is active on social media. To follow him, find all of his handles.
+    """
     queryset = Social.objects.all()
     serializer_class = SocialSerializer
 
